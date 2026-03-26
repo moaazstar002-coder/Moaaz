@@ -1,0 +1,15 @@
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  z-index: 9999;
+  box-shadow: 0 0 20px var(--shadow-color);
+}
+
+@media (max-width: 768px) {
+  .scroll-progress-bar {
+    height: 2px;
+  }
+}

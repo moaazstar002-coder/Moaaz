@@ -1,0 +1,86 @@
+.navbar {
+  background: var(--glass-bg);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 15px;
+  left: 5%;
+  right: 5%;
+  border-radius: 20px;
+  z-index: 1000;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-logo {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--main-bg);
+  box-shadow: 0 4px 15px var(--shadow-color);
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.brand-logo:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.navbar-brand h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--text-color), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover h1 {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    left: 2%;
+    right: 2%;
+    padding: 0.8rem 5%;
+  }
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .navbar-brand h1 {
+    font-size: 1.3rem;
+  }
+}

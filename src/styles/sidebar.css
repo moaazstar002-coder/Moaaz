@@ -1,0 +1,90 @@
+.radial-sidebar-container {
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+/* Hover Zone expands bounding box to catch mouse without gap loss */
+.hover-zone {
+  padding: 60px;
+  margin-left: -60px;
+  margin-top: -60px;
+}
+
+.radial-menu {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: box-shadow 0.3s ease;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.hover-zone:hover .radial-menu {
+  box-shadow: 0 12px 40px var(--shadow-color);
+  border-color: var(--accent);
+}
+
+.radial-icon {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255, 0.1);
+  outline: none;
+  will-change: transform;
+}
+
+.radial-icon:hover {
+  color: #030305;
+}
+
+.radial-icon.active-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+  font-size: 1.4rem;
+  z-index: 10;
+  box-shadow: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .radial-sidebar-container {
+    left: 50%;
+    top: auto;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+  
+  .hover-zone {
+    padding: 40px;
+    margin-left: 0;
+    margin-top: -40px;
+    margin-bottom: -40px;
+  }
+}

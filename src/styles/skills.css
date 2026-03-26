@@ -1,0 +1,111 @@
+.skills {
+  background: var(--main-bg);
+  position: relative;
+  z-index: 1;
+}
+
+.skills h3 {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--text-color), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.skills h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 2px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-category {
+  background: var(--glass-bg);
+  padding: 40px 30px;
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.skill-category:hover {
+  transform: translateY(-8px);
+  background: rgba(20, 20, 25, 0.8);
+  box-shadow: 0 20px 40px var(--shadow-color);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.skill-category h4 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-color);
+  letter-spacing: 1px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skill-badge {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-color);
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255,255,255, 0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.skill-badge:hover {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+  border-color: transparent;
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skills h3 {
+    font-size: 2.5rem;
+  }
+}
