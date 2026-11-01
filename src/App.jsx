@@ -18,12 +18,38 @@ function AppContent() {
   const [activeSection, setActiveSection] = useState('home');
   const [loading, setLoading] = useState(true);
 
+  // Fast & Snappy Preloader Timer (under 1.1s instead of 2.8s!)
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2800);
+    }, 1100);
     return () => clearTimeout(timer);
   }, []);
+
+  // Section Observer for Smooth Active Section Spy on Scroll
+  useEffect(() => {
+    const sectionIds = ['home', 'about-me', 'skills', 'projects', 'contact'];
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-30% 0px -30% 0px',
+        threshold: 0,
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [loading]);
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
@@ -34,21 +60,34 @@ function AppContent() {
   };
 
   return (
-    <div className="app" style={loading ? { height: '100vh', overflow: 'hidden' } : {}}>
+    <div className="min-h-screen bg-[#07080e] text-[#f1f5f9] selection:bg-indigo-500/30 selection:text-indigo-200">
+      {/* Snappy Preloader */}
       <AnimatePresence mode="wait">
-        {loading && <Preloader key="preloader" />}
+        {loading && <Preloader key="preloader" onComplete={() => setLoading(false)} />}
       </AnimatePresence>
+
+      {/* Zero Re-Render GPU Cursor */}
       <CustomCursor />
+
+      {/* Top Luminous Scroll Progress */}
       <ScrollProgress />
-      <Navigation onNavigate={scrollToSection} />
+
+      {/* Sticky Top Header Navigation */}
+      <Navigation onNavigate={scrollToSection} activeSection={activeSection} />
+
+      {/* Floating Island Action Dock */}
       <Sidebar onNavigate={scrollToSection} activeSection={activeSection} />
-      <main>
+
+      {/* Main Page Sections */}
+      <main className="relative z-10">
         <Hero id="home" onNavigate={scrollToSection} />
         <About id="about-me" />
         <Skills id="skills" />
         <Projects id="projects" />
         <Contact id="contact" />
       </main>
+
+      {/* Minimalist Tech Footer */}
       <Footer />
     </div>
   );
