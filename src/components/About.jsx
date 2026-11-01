@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { HiAcademicCap, HiSparkles, HiCodeBracket, HiMapPin, HiCheckBadge } from 'react-icons/hi2';
+import { HiAcademicCap, HiSparkles, HiCodeBracket, HiMapPin, HiCheckBadge, HiCommandLine } from 'react-icons/hi2';
 import moaazImage from '../assets/moaaz.jpg';
+import TerminalWidget from './TerminalWidget';
 
 function About({ id }) {
   return (
@@ -174,6 +175,28 @@ function About({ id }) {
         </motion.div>
 
       </div>
+
+      {/* Interactive Developer Terminal Showcase */}
+      <motion.div
+        className="mt-8"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.35 }}
+      >
+        <div className="flex items-center justify-between mb-3 px-2">
+          <div className="flex items-center gap-2">
+            <HiCommandLine className="w-4 h-4 text-cyan-400" />
+            <span className="text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">
+              Interactive Developer Terminal
+            </span>
+          </div>
+          <span className="text-[11px] font-mono text-slate-500 hidden sm:inline">
+            Try typing: whoami, skills, projects, contact, clear
+          </span>
+        </div>
+        <TerminalWidget />
+      </motion.div>
     </section>
   );
 }
