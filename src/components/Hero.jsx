@@ -137,14 +137,14 @@ function Hero({ id, onNavigate }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
         >
-          {/* <div className="text-center">
+          <div className="text-center">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
               20+
             </h3>
             <p className="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">
               Projects Completed
             </p>
-          </div> */}
+          </div>
           <div className="text-center border-x border-white/[0.08]">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
               3+
