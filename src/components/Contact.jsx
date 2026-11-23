@@ -162,7 +162,7 @@ function Contact({ id }) {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="https://www.linkedin.com/in/moaaz-hussain-4a4586337/"
+                href="https://www.linkedin.com/in/moaaz-hussain-o02"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3 px-4 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:bg-[#0077b5]/20 hover:border-[#0077b5]/50 text-slate-300 hover:text-white flex items-center justify-center gap-2 transition-all font-medium text-xs group"

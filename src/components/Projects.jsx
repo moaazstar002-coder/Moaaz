@@ -46,32 +46,32 @@ const projectsList = [
     tags: ["React", "Redux/Context", "REST APIs", "Tailwind CSS"],
     category: "Web Apps",
     featured: true,
-    liveUrl: "https://gamersnest-v01.netlify.app/",
+    liveUrl: "https://games-store-plum.vercel.app/",
     githubUrl: "https://github.com/moaazstar002-coder",
     image: gamersNestImg
   },
-  {
-    id: 4,
-    title: "EduVerse",
-    description: "Modern interactive learning platform delivering modular courses, interactive assessments, and smooth educational dashboard experience.",
-    tags: ["React", "JavaScript", "APIs", "Modern CSS"],
-    category: "Web Apps",
-    featured: true,
-    liveUrl: "https://eduverse02.netlify.app/",
-    githubUrl: "https://github.com/moaazstar002-coder",
-    image: eduVerseImg
-  },
-  {
-    id: 5,
-    title: "Products Manager",
-    description: "Real-time inventory and product management dashboard with CRUD operations, search filters, and smooth responsive table management.",
-    tags: ["React", "JavaScript", "Tailwind CSS"],
-    category: "Web Apps",
-    featured: false,
-    liveUrl: "https://products-manger-02.netlify.app",
-    githubUrl: "https://github.com/moaazstar002-coder",
-    image: pmImg
-  },
+  // {
+  //   id: 4,
+  //   title: "EduVerse",
+  //   description: "Modern interactive learning platform delivering modular courses, interactive assessments, and smooth educational dashboard experience.",
+  //   tags: ["React", "JavaScript", "APIs", "Modern CSS"],
+  //   category: "Web Apps",
+  //   featured: true,
+  //   liveUrl: "https://eduverse02.netlify.app/",
+  //   githubUrl: "https://github.com/moaazstar002-coder",
+  //   image: eduVerseImg
+  // },
+  // {
+  //   id: 5,
+  //   title: "Products Manager",
+  //   description: "Real-time inventory and product management dashboard with CRUD operations, search filters, and smooth responsive table management.",
+  //   tags: ["React", "JavaScript", "Tailwind CSS"],
+  //   category: "Web Apps",
+  //   featured: false,
+  //   liveUrl: "https://products-manger-02.netlify.app",
+  //   githubUrl: "https://github.com/moaazstar002-coder",
+  //   image: pmImg
+  // },
   // {
   //   id: 6,
   //   title: "Task Manager",

@@ -31,7 +31,7 @@ const allSkills = [
   { name: 'Framer Motion', category: 'Frontend', icon: SiFramer, color: '#0055FF', level: 'Advanced' },
   
   { name: 'C++', category: 'Languages & Core', icon: SiCplusplus, color: '#00599C', level: 'Strong' },
-  { name: 'Python', category: 'Languages & Core', icon: SiPython, color: '#3776AB', level: 'Intermediate' },
+  { name: 'Python', category: 'Languages & Core', icon: SiPython, color: '#3776AB', level: 'Advanced' },
   { name: 'Data Structures & Alg.', category: 'Languages & Core', icon: HiCpuChip, color: '#A855F7', level: 'Strong' },
   { name: 'RESTful APIs', category: 'Languages & Core', icon: HiGlobeAlt, color: '#10B981', level: 'Advanced' },
 
